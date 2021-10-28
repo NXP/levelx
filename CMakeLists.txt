@@ -22,7 +22,9 @@ add_library("azrtos::${PROJECT_NAME}" ALIAS ${PROJECT_NAME})
 # Define any required dependencies between this library and others
 if(NOT LX_STANDALONE_ENABLE)
     target_link_libraries(${PROJECT_NAME} PUBLIC 
-        "azrtos::threadx")
+        "azrtos::threadx"
+        "azrtos::filex"
+        )
 endif()
 
 # A place for generated/copied include files (no need to change)
